@@ -1,11 +1,8 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'task_model.dart';
 export 'task_model.dart';
 
@@ -74,7 +71,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                   unselectedWidgetColor: FlutterFlowTheme.of(context).alternate,
                 ),
                 child: Checkbox(
-                  value: _model.checkboxValue ??= widget!.tasksDoc!.completed,
+                  value: _model.checkboxValue ??= widget.tasksDoc!.completed,
                   onChanged: (newValue) async {
                     safeSetState(() => _model.checkboxValue = newValue!);
                     if (newValue!) {
@@ -84,7 +81,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                   side: (FlutterFlowTheme.of(context).alternate != null)
                       ? BorderSide(
                           width: 2,
-                          color: FlutterFlowTheme.of(context).alternate!,
+                          color: FlutterFlowTheme.of(context).alternate,
                         )
                       : null,
                   activeColor: FlutterFlowTheme.of(context).green,
@@ -94,7 +91,7 @@ class _TaskWidgetState extends State<TaskWidget> {
               Flexible(
                 child: Text(
                   valueOrDefault<String>(
-                    widget!.tasksDoc?.title,
+                    widget.tasksDoc?.title,
                     'title',
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
